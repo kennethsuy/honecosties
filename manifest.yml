@@ -1,0 +1,6 @@
+apps:
+- name: hone-costies
+  host: hone-costies
+  domain: mybluemix.net
+  random-route: true
+  memory: 128M
