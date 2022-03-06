@@ -19,6 +19,27 @@ $ yarn generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
+
+## Deployment 
+
+```bash
+# login to ibmcloud
+$ ibmcloud login --sso
+$ ibmcloud cr login
+$ ibmcloud target --cf
+
+
+# create docker image and push it to container registry
+$  docker build . -t us.icr.io/kenneth-uy/hone-costies-image:latest
+$ docker push us.icr.io/kenneth-uy/hone-costies-image
+
+
+# build for production and launch server
+$ export CF_DOCKER_PASSWORD=<IAMAPIKEYKEY>
+$ ibmcloud cf push
+```
+
+
 ## Special Directories
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
