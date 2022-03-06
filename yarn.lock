@@ -946,7 +946,7 @@
 
 "@carbon/icons-vue@^10.47.0":
   version "10.47.0"
-  resolved "https://registry.npmjs.org/@carbon/icons-vue/-/icons-vue-10.47.0.tgz"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-vue/-/icons-vue-10.47.0.tgz#3f016d77347ddb77f8eeea469fa06ceac029aca0"
   integrity sha512-tjCr9zot0pSqtCSSY9PyWin3HrQzEEKP3r/6vvzxPfaTMLaoU0SYeeyssGw/w25ibe1tcvOXCBX3+LBDDBl1Kg==
   dependencies:
     "@carbon/icon-helpers" "^10.28.0"
@@ -969,7 +969,7 @@
 
 "@carbon/vue@^2.40.0":
   version "2.40.0"
-  resolved "https://registry.npmjs.org/@carbon/vue/-/vue-2.40.0.tgz"
+  resolved "https://registry.yarnpkg.com/@carbon/vue/-/vue-2.40.0.tgz#fbd5d05f42c2283dcd0d61d75afccc0d65e33604"
   integrity sha512-2VvJKeh8CoiGv2v1J7iyMEmsaAcqPJih6VEcrPekX0qWqvJRY3xA7Rm+461HQMK8QBzDQi3n4uDdOEUvp0OFpA==
   dependencies:
     "@carbon/icons-vue" "10.27.0"
@@ -2462,7 +2462,7 @@ carbon-components@10.30.0:
 
 carbon-components@^10.54.0:
   version "10.54.0"
-  resolved "https://registry.npmjs.org/carbon-components/-/carbon-components-10.54.0.tgz"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.54.0.tgz#f70d0a9fcc7e84f8fb00a45b6b9894d77155acce"
   integrity sha512-gl0b4wRG1E/ns02nG/M0FaNm4FCT91iTr1XFzqY+h1wFsjG1/2OOu7A6lth8Qtk0jsr//YZcB0MNjq8WFaFciw==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"

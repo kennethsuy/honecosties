@@ -2,6 +2,11 @@ FROM alpine:3.14
 
 ENV NODE_VERSION 16.14.0
 
+RUN apk update && apk upgrade
+RUN apk add npm
+RUN apk add git
+RUN npm install -g yarn
+
 WORKDIR /usr/src/app
 
 COPY . ./
