@@ -7,6 +7,8 @@
       </button>
     </p>
     <br />
+    <section class="section is-main-section">
+      <client-only>
     <div class="costs">
       <cv-number-input
         v-model="stoneCost"
@@ -67,8 +69,8 @@
       v-model="honeChance"
       label="Hone Chance (between 0 and 100)"
       placeholder="Make it a number"
-      min=0
-      max=100
+      min="0"
+      max="100"
     >
       <template
         v-if="
@@ -82,6 +84,8 @@
         >Must be between 100 and 0</template
       >
     </cv-number-input>
+    
+    <div>{{ this.calculateHoneAttempt }}</div>
     <div>{{ this.calculateHoneCost }}</div>
     <cv-number-input
       v-model="boostCost"
@@ -96,8 +100,8 @@
       v-model="boostBonus"
       label="Boost Bonus (between 0 and 100)"
       placeholder="Make it a number"
-      min=0
-      max=100
+      min="0"
+      max="100"
     >
       <template
         v-if="
@@ -111,13 +115,18 @@
         >Must be between 100 and 0</template
       >
     </cv-number-input>
-    <div>{{ this.calculateBoostCost }}</div>
+    <div>Average attempt cost with hone boosts: {{ this.calculateBoostAttempt }}</div>
+    <div>Average cost to succeed with hone boosts: {{ this.calculateBoostCost }}</div>
+    </client-only>
+    </section>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "IndexPage",
+
   methods: {
     test() {
       this.$axios.get("/ping").then((res) => {
@@ -141,13 +150,22 @@ export default {
       leapReq: "8",
       shardReq: "60",
       honeChance: "40",
-      boostCost:"70",
-      boostBonus:"0.84"
-
-
+      boostCost: "70",
+      boostBonus: "0.84",
     };
   },
   computed: {
+    calculateHoneAttempt(){
+      let finalCalc =
+        ((parseFloat(this.stoneReq) * parseFloat(this.stoneCost)) / 10 +
+          parseFloat(this.leapReq) * parseFloat(this.leapCost) +
+          (parseFloat(this.shardReq) * parseFloat(this.shardCost)) / 1000) ;
+      if (finalCalc) {
+        return "Cost per hone attempt is: " + parseFloat(finalCalc);
+      } else {
+        return "One of your values isn't a number";
+      }
+    },
     calculateHoneCost() {
       let finalCalc =
         (((parseFloat(this.stoneReq) * parseFloat(this.stoneCost)) / 10 +
@@ -161,14 +179,18 @@ export default {
         return "One of your values isn't a number";
       }
     },
+    calculateBoostAttempt(){
+      return (this.boostCost * 100) / this.boostBonus *0.01 * this.honeChance;
+    },
     calculateBoostCost() {
-      return (this.boostCost * 100 / this.boostBonus)
+      return (this.boostCost * 100) / this.boostBonus;
     },
   },
 };
 </script>
 
 <style scoped>
+
 .costs {
   background: gray;
 }
