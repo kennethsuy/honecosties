@@ -29,8 +29,13 @@ $ ibmcloud cr login
 $ ibmcloud target --cf
 
 
-# create docker image and push it to container registry
+# create docker image
 $  docker build . -t us.icr.io/kenneth-uy/hone-costies-image:latest
+
+#test locally
+$ winpty docker run -it -p 8080:8080 us.icr.io/kenneth-uy/hone-costies-image
+
+#push to container registry
 $ docker push us.icr.io/kenneth-uy/hone-costies-image
 
 
