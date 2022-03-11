@@ -1,140 +1,140 @@
 {
-    "armortier3a": 
-    {
-        "9to10":{
-            "stonereq": 192,
-            "shardreq": 50,
-            "leapstonereq": 6,
-            "flatgold": 100,
-            "honechance": 30,
-            "solargrace": 0.84,
-            "solarblessing": 1.67,
-            "solarprotection": 5,
-            "tailoring": 10
+    "tier3a": {
+        "armor": {
+            "9to10": {
+                "stonereq": 192,
+                "shardreq": 50,
+                "leapstonereq": 6,
+                "flatgold": 100,
+                "honechance": 30,
+                "solargrace": 0.84,
+                "solarblessing": 1.67,
+                "solarprotection": 5,
+                "tailoring": 10
+            },
+            "10to11": {
+                "stonereq": 192,
+                "shardreq": 50,
+                "leapstonereq": 6,
+                "flatgold": 100,
+                "honechance": 30,
+                "solargrace": 0.84,
+                "solarblessing": 1.67,
+                "solarprotection": 5,
+                "tailoring": 10
+            },
+            "11to12": {
+                "stonereq": 192,
+                "shardreq": 50,
+                "leapstonereq": 6,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "12to13": {
+                "stonereq": 228,
+                "shardreq": 60,
+                "leapstonereq": 6,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "13to14": {
+                "stonereq": 228,
+                "shardreq": 60,
+                "leapstonereq": 8,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "14to15": {
+                "stonereq": 228,
+                "shardreq": 60,
+                "leapstonereq": 8,
+                "flatgold": 100,
+                "honechance": 10,
+                "solargrace": 0.14,
+                "solarblessing": 0.28,
+                "solarprotection": 0.83,
+                "tailoring": 10
+            }
         },
-        "10to11":{
-            "stonereq": 192,
-            "shardreq": 50,
-            "leapstonereq": 6,
-            "flatgold": 100,
-            "honechance": 30,
-            "solargrace": 0.84,
-            "solarblessing": 1.67,
-            "solarprotection": 5,
-            "tailoring": 10
-        },
-        "11to12":{
-            "stonereq": 192,
-            "shardreq": 50,
-            "leapstonereq": 6,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "12to13":{
-            "stonereq": 228,
-            "shardreq": 60,
-            "leapstonereq": 6,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "13to14":{
-            "stonereq": 228,
-            "shardreq": 60,
-            "leapstonereq": 8,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "14to15":{
-            "stonereq": 228,
-            "shardreq": 60,
-            "leapstonereq": 8,
-            "flatgold": 100,
-            "honechance": 10,
-            "solargrace": 0.14,
-            "solarblessing": 0.28,
-            "solarprotection": 0.83,
-            "tailoring": 10
-        }
-    },
-    "weapontier3a": 
-    {
-        "9to10":{
-            "stonereq": 320,
-            "shardreq": 74,
-            "leapstonereq": 10,
-            "flatgold": 100,
-            "honechance": 30,
-            "solargrace": 0.84,
-            "solarblessing": 1.67,
-            "solarprotection": 5,
-            "tailoring": 10
-        },
-        "10to11":{
-            "stonereq": 320,
-            "shardreq": 74,
-            "leapstonereq": 10,
-            "flatgold": 100,
-            "honechance": 30,
-            "solargrace": 0.84,
-            "solarblessing": 1.67,
-            "solarprotection": 5,
-            "tailoring": 10
-        },
-        "11to12":{
-            "stonereq": 320,
-            "shardreq": 74,
-            "leapstonereq": 10,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "12to13":{
-            "stonereq": 380,
-            "shardreq": 88,
-            "leapstonereq": 10,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "13to14":{
-            "stonereq": 380,
-            "shardreq": 88,
-            "leapstonereq": 12,
-            "flatgold": 100,
-            "honechance": 15,
-            "solargrace": 0.21,
-            "solarblessing": 0.42,
-            "solarprotection": 1.25,
-            "tailoring": 10
-        },
-        "14to15":{
-            "stonereq": 380,
-            "shardreq": 88,
-            "leapstonereq": 12,
-            "flatgold": 100,
-            "honechance": 10,
-            "solargrace": 0.14,
-            "solarblessing": 0.28,
-            "solarprotection": 0.83,
-            "tailoring": 10
+        "weapon": {
+            "9to10": {
+                "stonereq": 320,
+                "shardreq": 74,
+                "leapstonereq": 10,
+                "flatgold": 100,
+                "honechance": 30,
+                "solargrace": 0.84,
+                "solarblessing": 1.67,
+                "solarprotection": 5,
+                "tailoring": 10
+            },
+            "10to11": {
+                "stonereq": 320,
+                "shardreq": 74,
+                "leapstonereq": 10,
+                "flatgold": 100,
+                "honechance": 30,
+                "solargrace": 0.84,
+                "solarblessing": 1.67,
+                "solarprotection": 5,
+                "tailoring": 10
+            },
+            "11to12": {
+                "stonereq": 320,
+                "shardreq": 74,
+                "leapstonereq": 10,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "12to13": {
+                "stonereq": 380,
+                "shardreq": 88,
+                "leapstonereq": 10,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "13to14": {
+                "stonereq": 380,
+                "shardreq": 88,
+                "leapstonereq": 12,
+                "flatgold": 100,
+                "honechance": 15,
+                "solargrace": 0.21,
+                "solarblessing": 0.42,
+                "solarprotection": 1.25,
+                "tailoring": 10
+            },
+            "14to15": {
+                "stonereq": 380,
+                "shardreq": 88,
+                "leapstonereq": 12,
+                "flatgold": 100,
+                "honechance": 10,
+                "solargrace": 0.14,
+                "solarblessing": 0.28,
+                "solarprotection": 0.83,
+                "tailoring": 10
+            }
         }
     }
 }

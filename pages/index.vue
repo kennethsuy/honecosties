@@ -138,9 +138,21 @@
 <script>
 export default {
   name: "IndexPage",
+  async asyncData({ $axios }) {
+    const requiredmats = await $axios.get("/get-material-req");
+    return{
+
+    }
+  },
   methods: {
     test() {
       this.$axios.get("/ping").then((res) => {
+        console.log(res);
+      });
+    },
+    updateReqs(thisTier,thisSlot) {
+      
+      this.$axios.get("/get-material-req",{params: {tier:thisTier, slot:thisSlot}}).then((res) => {
         console.log(res);
       });
     },
@@ -152,6 +164,7 @@ export default {
       ); // ...and ensure strings of whitespace fail
     },
   },
+
   data() {
     return {
       stoneReq: "258",
