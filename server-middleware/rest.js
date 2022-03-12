@@ -13,14 +13,15 @@ app.use(bodyParser.json())
 const now = new moment();
 let serverdefaults = 
 {   
-    updatedAt: now,
-    gstoneCost: "53",
-    dstoneCost: "53",
-    leapCost: "171",
-    shardCost: "240",
-    solargraceCost:"70",
-    solarblessing:"70",
-    solarprotection:"70"
+    updatedat: now,
+    gstonecost: "53",
+    dstonecost: "53",
+    leapcost: "270",
+    shardcost: "180",
+    solargracecost:"116",
+    solarblessingcost:"337",
+    solarprotectioncost:"820",
+    tailoringcost:"17800",
 }
 
 app.post('/update-costs', function(req,res){
