@@ -14,16 +14,47 @@
           "
         >
           <div class="text-xl font-bold">
-            Honing Cost Calculator - {{ this.currentslot.toUpperCase() }} -
-            {{ this.currentlevel }}
+            Honing Cost Calculator
           </div>
-          <button
-            style="display: inline-block"
-            @click.prevent="updateReqs('tier3a', 'armor', '9to10')"
-          >
-            Load Level
-          </button>
         </div>
+        <section class="py-4 border-b border-solid border-gray-400">
+          <div class="flex justify-center gap-x-12">
+            <div class="w-full flex justify-end">
+              <div class="inline-flex rounded-md shadow-sm" role="group">
+                <button
+                  type="button"
+                  @click.prevent="updateReqs(currenttier, 'weapon', currentlevel)"
+                  class="py-2 px-4 text-sm font-medium rounded-l-lg border border-gray-200 transition"
+                  :class="currentslot === 'weapon' ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white text-gray-900 hover:bg-gray-100 hover:text-green-700'"
+                >
+                  Weapon
+                </button>
+                <button
+                  type="button"
+                  @click.prevent="updateReqs(currenttier, 'armor', currentlevel)"
+                  class="py-2 px-4 text-sm font-medium rounded-r-lg border border-gray-200 transition"
+                  :class="currentslot === 'armor' ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white text-gray-900 hover:bg-gray-100 hover:text-green-700'"
+                >
+                  Armor
+                </button>
+              </div>
+            </div>
+            <div class="w-full">
+              <select
+                class="px-4 py-2 rounded-lg text-sm transition"
+                v-model="currentlevel"
+                @change="updateReqs(currenttier, currentslot, currentlevel)"
+              >
+                <option value="9to10">9 to 10</option>
+                <option value="10to11">10 to 11</option>
+                <option value="11to12">11 to 12</option>
+                <option value="12to13">12 to 13</option>
+                <option value="13to14">13 to 14</option>
+                <option value="14to15">14 to 15</option>
+              </select>
+            </div>
+          </div>
+        </section>
         <section class="py-2 border-b border-solid border-gray-400">
           <div>
             <div
@@ -174,26 +205,35 @@
             </div>
           </div>
         </section>
-        <section class="py-2 border-b border-solid border-gray-400">
-          <p>{{ this.currentboosttype }}</p>
-          <button
-            style="display: inline-block"
-            @click.prevent="updateBoostType('solargrace')"
-          >
-            Load Solar Grace
-          </button>
-          <button
-            style="display: inline-block"
-            @click.prevent="updateBoostType('solarblessing')"
-          >
-            Load Solar Blessing
-          </button>
-          <button
-            style="display: inline-block"
-            @click.prevent="updateBoostType('solarprotection')"
-          >
-            Load Solar Protection
-          </button>
+        <section class="py-4 border-b border-solid border-gray-400">
+          <div class="w-full flex justify-center">
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+              <button
+                type="button"
+                @click.prevent="updateBoostType('solargrace')"
+                class="py-2 px-4 text-sm font-medium rounded-l-lg border border-gray-200 transition"
+                :class="currentboosttype === 'solargrace' ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white text-gray-900 hover:bg-gray-100 hover:text-green-700'"
+              >
+                Solar Grace
+              </button>
+              <button
+                type="button"
+                @click.prevent="updateBoostType('solarblessing')"
+                class="py-2 px-4 text-sm font-medium border border-gray-200 transition"
+                :class="currentboosttype === 'solarblessing' ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white text-gray-900 hover:bg-gray-100 hover:text-green-700'"
+              >
+                Solar Blessing
+              </button>
+              <button
+                type="button"
+                @click.prevent="updateBoostType('solarprotection')"
+                class="py-2 px-4 text-sm font-medium rounded-r-lg border border-gray-200 transition"
+                :class="currentboosttype === 'solarprotection' ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white text-gray-900 hover:bg-gray-100 hover:text-green-700'"
+              >
+                Solar Protection
+              </button>
+            </div>
+          </div>
         </section>
         <section class="py-2">
           <div class="px-2 py-4 w-full flex flex-wrap gap-x-12 justify-center">
@@ -230,39 +270,32 @@
               />
             </div>
           </div>
-          <div class="px-2 py-4 w-full flex flex-wrap gap-x-12 justify-center">
-            <div class="w-1/3">
+          <div class="px-2 w-full flex flex-wrap gap-x-12 justify-center">
+            <div class="w-1/3 flex flex-col justify-center">
               <div class="flex flex-row justify-between">
                 <div class="text-md font-bold">
-                  Cost per attempt with boosts
+                  Net gold per boost
                 </div>
+                <div
+                  :class="this.calculateBoostCost < this.calculateHoneSuccessCost ? 'text-green-600' : 'text-red-600'"
+                >
+                  {{ this.calculateGoldSaved.toLocaleString("en-US") }}
+                </div>
+              </div>
+            </div>
+            <div class="py-2 w-1/3 flex flex-col justify-between">
+              <div class="flex flex-row justify-between">
+                <div class="text-md font-bold">Cost per attempt</div>
                 <div>
                   {{ this.calculateBoostAttempt.toLocaleString("en-US") }}
                 </div>
               </div>
-            </div>
-            <div class="w-1/3">
               <div class="flex flex-row justify-between">
-                <div class="text-md font-bold">Cost to succeed with boosts</div>
-                <div>{{ this.calculateBoostCost.toLocaleString("en-US") }}</div>
+                <div class="text-md font-bold">Cost to succeed</div>
+                <div>
+                  {{ this.calculateBoostCost.toLocaleString("en-US") }}
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="w-1/3">
-            <div class="flex flex-row justify-between">
-              <div
-                class="text-md font-bold"
-                v-if="this.calculateBoostCost < this.calculateHoneSuccessCost"
-              >
-                Gold saved per boost
-              </div>
-              <div
-                class="text-md font-bold"
-                v-if="this.calculateBoostCost >= this.calculateHoneSuccessCost"
-              >
-                Gold LOST per boost
-              </div>
-              <div>{{ this.calculateGoldSaved.toLocaleString("en-US") }}</div>
             </div>
           </div>
         </section>
@@ -293,8 +326,8 @@ export default {
           params: { tier: thisTier, slot: thisSlot },
         })
         .then((res) => {
-          this.currentslot = thisSlot;
           this.currenttier = thisTier;
+          this.currentslot = thisSlot;
           this.currentlevel = thisLevel;
           this.stonereq = res.data[thisLevel].stonereq;
           this.shardreq = res.data[thisLevel].shardreq;
@@ -345,8 +378,8 @@ export default {
       solarprotectioncost: "700",
       tailoring: "10",
       currentslot: "weapon",
-      currenttier: "tier2",
-      currentlevel: "8to9",
+      currenttier: "tier3a",
+      currentlevel: "9to10",
       currentboosttype: "solargrace",
     };
   },
@@ -375,16 +408,16 @@ export default {
         return "Invalid input";
       }
     },
-    calculateBoostCost() {
-      return parseInt((this.boostCost * 100) / this.boostbonus);
-    },
     calculateBoostAttempt() {
-      return (
+      return parseInt(
         ((this.boostCost * 100) / this.boostbonus) * 0.01 * this.honechance
       );
     },
+    calculateBoostCost() {
+      return parseInt((this.boostCost * 100) / this.boostbonus);
+    },
     calculateGoldSaved() {
-      return (
+      return parseInt(
         (this.calculateHoneSuccessCost - this.calculateBoostCost) *
         0.01 *
         this.boostbonus
