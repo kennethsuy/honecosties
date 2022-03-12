@@ -2,14 +2,20 @@
 
 const bodyParser = require('body-parser')
 const express = require('express')
+const moment = require('moment')
+
+
 
 var app = express()
 
 app.use(bodyParser.json())
 
+const now = new moment();
 let serverdefaults = 
-{
-    stoneCost: "53",
+{   
+    updatedAt: now,
+    gstoneCost: "53",
+    dstoneCost: "53",
     leapCost: "171",
     shardCost: "240",
     solargraceCost:"70",
@@ -18,7 +24,11 @@ let serverdefaults =
 }
 
 app.post('/update-costs', function(req,res){
-    res.status(200).send("Ok")
+    const postedjson = req.body.formdata
+    if (req.body.gstonecost){ 
+        serverdefaults.gstonecost = req.body.gstonecost
+    }
+    
 })
 
 app.get('/ping', function(req,res){
@@ -42,5 +52,9 @@ app.get('/get-material-req', function(req,res){
     //import json
     //let returnjson = imported value[something thisTier]
     
+})
+
+app.get('/default-costs', function(req,res){
+    res.json(serverdefaults)
 })
 module.exports = app
