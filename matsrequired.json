@@ -4,7 +4,7 @@
             "9to10": {
                 "stonereq": 192,
                 "shardreq": 50,
-                "leapstonereq": 6,
+                "leapreq": 6,
                 "flatgold": 100,
                 "honechance": 30,
                 "solargrace": 0.84,
@@ -15,7 +15,7 @@
             "10to11": {
                 "stonereq": 192,
                 "shardreq": 50,
-                "leapstonereq": 6,
+                "leapreq": 6,
                 "flatgold": 100,
                 "honechance": 30,
                 "solargrace": 0.84,
@@ -26,7 +26,7 @@
             "11to12": {
                 "stonereq": 192,
                 "shardreq": 50,
-                "leapstonereq": 6,
+                "leapreq": 6,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -37,7 +37,7 @@
             "12to13": {
                 "stonereq": 228,
                 "shardreq": 60,
-                "leapstonereq": 6,
+                "leapreq": 6,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -48,7 +48,7 @@
             "13to14": {
                 "stonereq": 228,
                 "shardreq": 60,
-                "leapstonereq": 8,
+                "leapreq": 8,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -59,7 +59,7 @@
             "14to15": {
                 "stonereq": 228,
                 "shardreq": 60,
-                "leapstonereq": 8,
+                "leapreq": 8,
                 "flatgold": 100,
                 "honechance": 10,
                 "solargrace": 0.14,
@@ -72,7 +72,7 @@
             "9to10": {
                 "stonereq": 320,
                 "shardreq": 74,
-                "leapstonereq": 10,
+                "leapreq": 10,
                 "flatgold": 100,
                 "honechance": 30,
                 "solargrace": 0.84,
@@ -83,7 +83,7 @@
             "10to11": {
                 "stonereq": 320,
                 "shardreq": 74,
-                "leapstonereq": 10,
+                "leapreq": 10,
                 "flatgold": 100,
                 "honechance": 30,
                 "solargrace": 0.84,
@@ -94,7 +94,7 @@
             "11to12": {
                 "stonereq": 320,
                 "shardreq": 74,
-                "leapstonereq": 10,
+                "leapreq": 10,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -105,7 +105,7 @@
             "12to13": {
                 "stonereq": 380,
                 "shardreq": 88,
-                "leapstonereq": 10,
+                "leapreq": 10,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -116,7 +116,7 @@
             "13to14": {
                 "stonereq": 380,
                 "shardreq": 88,
-                "leapstonereq": 12,
+                "leapreq": 12,
                 "flatgold": 100,
                 "honechance": 15,
                 "solargrace": 0.21,
@@ -127,7 +127,7 @@
             "14to15": {
                 "stonereq": 380,
                 "shardreq": 88,
-                "leapstonereq": 12,
+                "leapreq": 12,
                 "flatgold": 100,
                 "honechance": 10,
                 "solargrace": 0.14,

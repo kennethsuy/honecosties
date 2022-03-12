@@ -27,14 +27,20 @@ app.get('/ping', function(req,res){
 app.get('/health-check', function(req,res){
     res.status(200).send("Ok")
 })
+const jsonData = require('../matsrequired.json')
 app.get('/get-material-req', function(req,res){
-    let tier = req.params.tier
-    let slot = req.params.slot
-    const jsonData = require('../matsrequired.json')
+    const tier = req.query.tier
+    const slot = req.query.slot
+    if(jsonData[tier] && jsonData[tier][slot]){
+        res.status(200).json(jsonData[tier][slot])
+    }else{
+        res.status(400).send("Invalid Tier + Slot")
+    }
+    
     let jsonValues = jsonData["armortier3a"]["9to10"]
     //let thisTier = req.body.tier 
     //import json
     //let returnjson = imported value[something thisTier]
-    res.json({tier: slot})
+    
 })
 module.exports = app
