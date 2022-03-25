@@ -36,7 +36,7 @@ $  docker build . -t us.icr.io/kenneth-uy/hone-costies-image:latest
 $ winpty docker run -it -p 8080:8080 us.icr.io/kenneth-uy/hone-costies-image
 
 #push to container registry
-$ docker push us.icr.io/kenneth-uy/hone-costies-image
+$ docker push us.icr.io/kenneth-uy/hone-costies-image:latest
 
 
 # build for production and launch server

@@ -13,7 +13,7 @@
             border-b border-solid border-gray-400
           "
         >
-          <div class="text-xl font-bold">Honing Cost Calculator</div>
+          <div class="text-xl font-bold">Honing Cost Calculator ({{this.updatedat}})</div>
         </div>
         <section class="py-4 border-b border-solid border-gray-400">
           <div class="flex justify-center gap-x-12">
@@ -77,6 +77,10 @@
                 <option value="12to13">12 to 13</option>
                 <option value="13to14">13 to 14</option>
                 <option value="14to15">14 to 15</option>
+                <option value="6to7p">6 to 7 PLUS</option>
+                <option value="7to8p">7 to 8 PLUS</option>
+                <option value="8to9p">8 to 9 PLUS</option>
+                <option value="9to10p">9 to 10 PLUS</option>
               </select>
             </div>
           </div>
@@ -415,7 +419,9 @@ export default {
           this.solarprotection = res.data[thisLevel].solarprotection;
           this.tailoring = res.data[thisLevel].tailoring;
           this.boostbonus = res.data[thisLevel][this.currentboosttype];
-          this.boostcost = this[this.currentboosttype + "cost"] ? this[this.currentboosttype + "cost"] : res.data[thisLevel].boostbonus;
+          this.boostcost = this[this.currentboosttype + "cost"]
+            ? this[this.currentboosttype + "cost"]
+            : res.data[thisLevel].boostbonus;
         });
     },
     updateBoostType(thisType) {
@@ -434,6 +440,7 @@ export default {
 
   data() {
     return {
+      updatedat: "",
       stonereq: "320",
       stonecost: "",
       gstonecost: "",
@@ -464,16 +471,16 @@ export default {
   mounted() {
     this.$axios.get("/default-costs").then((response) => {
       this.updatedat = response.data.updatedat;
-      this.stonecost = response.data.dstonecost ;
-      this.gstonecost = response.data.gstonecost ;
-      this.dstonecost = response.data.dstonecost ;
-      this.leapcost = response.data.leapcost ;
-      this.shardcost = response.data.shardcost ;
-      this.boostcost = response.data.solargracecost ;
-      this.solargracecost = response.data.solargracecost ;
-      this.solarblessingcost = response.data.solarblessingcost ;
-      this.solarprotectioncost = response.data.solarprotectioncost ;
-      this.tailoringcost = response.data.tailoringcost ;
+      this.stonecost = response.data.dstonecost;
+      this.gstonecost = response.data.gstonecost;
+      this.dstonecost = response.data.dstonecost;
+      this.leapcost = response.data.leapcost;
+      this.shardcost = response.data.shardcost;
+      this.boostcost = response.data.solargracecost;
+      this.solargracecost = response.data.solargracecost;
+      this.solarblessingcost = response.data.solarblessingcost;
+      this.solarprotectioncost = response.data.solarprotectioncost;
+      this.tailoringcost = response.data.tailoringcost;
     });
   },
   computed: {
@@ -481,8 +488,8 @@ export default {
       let cost =
         (parseFloat(this.stonereq) * parseFloat(this.stonecost)) / 10 +
         parseFloat(this.leapreq) * parseFloat(this.leapcost) +
-        (parseFloat(this.shardreq) * parseFloat(this.shardcost)) / 1000
-        +parseFloat(this.flatgold);
+        (parseFloat(this.shardreq) * parseFloat(this.shardcost)) / 1000 +
+        parseFloat(this.flatgold);
       if (cost) {
         return parseInt(cost);
       } else {
@@ -491,11 +498,12 @@ export default {
     },
     calculateHoneSuccesscost() {
       let cost =
-        ((parseFloat(this.stonereq) * parseFloat(this.stonecost)) / 10 +
-        parseFloat(this.leapreq) * parseFloat(this.leapcost) +
-        (parseFloat(this.shardreq) * parseFloat(this.shardcost)) / 1000
-        +parseFloat(this.flatgold))
-        *100/parseFloat(this.honechance);
+        (((parseFloat(this.stonereq) * parseFloat(this.stonecost)) / 10 +
+          parseFloat(this.leapreq) * parseFloat(this.leapcost) +
+          (parseFloat(this.shardreq) * parseFloat(this.shardcost)) / 1000 +
+          parseFloat(this.flatgold)) *
+          100) /
+        parseFloat(this.honechance);
       if (cost) {
         return parseInt(cost);
       } else {

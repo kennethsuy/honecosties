@@ -3,6 +3,7 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 const moment = require('moment')
+require('moment-timezone')
 
 
 
@@ -10,7 +11,8 @@ var app = express()
 
 app.use(bodyParser.json())
 
-const now = new moment();
+const now = new moment().tz('America/New_York').format('M/DD h:mm A z')
+
 let serverdefaults = 
 {   
     updatedat: now,
@@ -29,6 +31,29 @@ app.post('/update-costs', function(req,res){
     if (req.body.gstonecost){ 
         serverdefaults.gstonecost = req.body.gstonecost
     }
+    if (req.body.dstonecost){ 
+        serverdefaults.dstonecost = req.body.dstonecost
+    }
+    if (req.body.leapcost){ 
+        serverdefaults.leapcost = req.body.leapcost
+    }
+    if (req.body.shardcost){ 
+        serverdefaults.shardcost = req.body.shardcost
+    }
+    if (req.body.solargracecost){ 
+        serverdefaults.solargracecost = req.body.solargracecost
+    }
+    if (req.body.solarblessingcost){ 
+        serverdefaults.solarblessingcost = req.body.solarblessingcost
+    }
+    if (req.body.solarprotectioncost){ 
+        serverdefaults.solarprotectioncost = req.body.solarprotectioncost
+    }
+    if (req.body.tailoringcost){ 
+        serverdefaults.tailoringcost = req.body.tailoringcost
+    }
+    serverdefaults.updatedat = new moment().tz('America/New_York').format('M/DD h:mm A z')
+    res.json(serverdefaults)
     
 })
 
